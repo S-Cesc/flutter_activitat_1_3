@@ -1,0 +1,37 @@
+https://coolors.co/f2f8a0-f896d8-bf63f8-3407da-181528
+
+static const Color black45 = Color(0x73000000);
+
+- Tailwind
+
+{ 'mindaro': { DEFAULT: '#f2f8a0', 100: '#474c06', 200: '#8e980b', 300: '#d6e411', 400: '#e8f254', 500: '#f2f8a0', 600: '#f5f9b3', 700: '#f7fbc6', 800: '#fafcd9', 900: '#fcfeec' }, 'persian_pink': { DEFAULT: '#f896d8', 100: '#4b0533', 200: '#960a67', 300: '#e00e9a', 400: '#f34bbb', 500: '#f896d8', 600: '#faabdf', 700: '#fbc0e7', 800: '#fcd5ef', 900: '#feeaf7' }, 'heliotrope': { DEFAULT: '#bf63f8', 100: '#2a0342', 200: '#540684', 300: '#7e09c7', 400: '#a321f5', 500: '#bf63f8', 600: '#cc82f9', 700: '#d8a1fb', 800: '#e5c1fc', 900: '#f2e0fe' }, 'chrysler_blue': { DEFAULT: '#3407da', 100: '#0a012c', 200: '#150357', 300: '#1f0483', 400: '#2a05ae', 500: '#3407da', 600: '#5021f8', 700: '#7c59fa', 800: '#a790fc', 900: '#d3c8fd' }, 'dark_purple': { DEFAULT: '#181528', 100: '#050408', 200: '#0a0810', 300: '#0e0d18', 400: '#131120', 500: '#181528', 600: '#3b3463', 700: '#5e539e', 800: '#9289c1', 900: '#c8c4e0' } }
+
+- CSV
+
+f2f8a0,f896d8,bf63f8,3407da,181528
+
+- With #
+
+#f2f8a0, #f896d8, #bf63f8, #3407da, #181528
+
+- Array
+
+["f2f8a0","f896d8","bf63f8","3407da","181528"]
+
+- Object
+
+{"Mindaro":"f2f8a0","Persian pink":"f896d8","Heliotrope":"bf63f8","Chrysler blue":"3407da","Dark purple":"181528"}
+
+- Extended Array
+
+[{"name":"Mindaro","hex":"f2f8a0","rgb":[242,248,160],"cmyk":[2,0,35,3],"hsb":[64,35,97],"hsl":[64,86,80],"lab":[95,-15,42]},{"name":"Persian pink","hex":"f896d8","rgb":[248,150,216],"cmyk":[0,40,13,3],"hsb":[320,40,97],"hsl":[320,88,78],"lab":[74,46,-18]},{"name":"Heliotrope","hex":"bf63f8","rgb":[191,99,248],"cmyk":[23,60,0,3],"hsb":[277,60,97],"hsl":[277,91,68],"lab":[59,61,-60]},{"name":"Chrysler blue","hex":"3407da","rgb":[52,7,218],"cmyk":[76,97,0,15],"hsb":[253,97,85],"hsl":[253,94,44],"lab":[29,70,-92]},{"name":"Dark purple","hex":"181528","rgb":[24,21,40],"cmyk":[40,47,0,84],"hsb":[249,48,16],"hsl":[249,31,12],"lab":[8,7,-12]}]
+
+- XML
+
+<palette>
+  <color name="Mindaro" hex="f2f8a0" r="242" g="248" b="160" />
+  <color name="Persian pink" hex="f896d8" r="248" g="150" b="216" />
+  <color name="Heliotrope" hex="bf63f8" r="191" g="99" b="248" />
+  <color name="Chrysler blue" hex="3407da" r="52" g="7" b="218" />
+  <color name="Dark purple" hex="181528" r="24" g="21" b="40" />
+</palette>
