@@ -47,7 +47,13 @@ class Shades {
           900: shade900,
         });
 
-  operator [](int i) => _shades.containsKey(i) ? _shades[i] : _shades[500];
+  operator [](int i) => _shades.containsKey(i)
+      ? _shades[i]
+      : switch (i) {
+          <= 100 => _shades[100],
+          >= 950 => _shades[900],
+          _ => _shades[((100 + 50) ~/ 100) * 100]
+        };
 
   containsKey(int i) => _shades.containsKey(i);
 }
