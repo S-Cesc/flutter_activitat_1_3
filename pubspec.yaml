@@ -92,6 +92,8 @@ flutter:
 
   fonts:
     # Instructions: https://docs.flutter.dev/cookbook/design/fonts
+    # Getting Font Files from Google Fonts:
+    # - https://onlyflutter.com/how-to-use-google-fonts-in-flutter/
     # Add the Google Fonts you want to use
     - family: Montserrat
       fonts:
