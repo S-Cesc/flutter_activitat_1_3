@@ -52,7 +52,7 @@ class Shades {
       : switch (i) {
           < 0 => throw RangeError('Index out of range: $i'),
           <= 100 => _shades[100],
-          >= 950 => _shades[900],
+          >= 900 => _shades[900],
           _ => _shades[((100 + 50) ~/ 100) * 100]
         };
 
