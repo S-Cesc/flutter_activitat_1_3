@@ -5,14 +5,14 @@ import 'shades.dart';
 class AppStyles {
   static const fonts = (
     fontFamilyName: 'Montserrat',
-    bigTitle: TextStyle(fontSize: 40),
-    middleTitle: TextStyle(
+    display /*bigTitle*/: TextStyle(fontSize: 40),
+    headline /*middleTitle*/: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.bold,
     ),
-    activityType: TextStyle(fontSize: 18),
-    distance: TextStyle(fontSize: 24),
-    text: TextStyle(fontSize: 14),
+    labelLarge /*distance*/: TextStyle(fontSize: 24),
+    labelSmall /*activityType*/: TextStyle(fontSize: 18),
+    body: TextStyle(fontSize: 14),
   );
 
   static final colors = (
