@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 import '../widgets/advices.dart';
 import '../styles/app_styles.dart';
 import '../fake_data/fake_data.dart';
 import '../widgets/activity_card.dart';
+import '../widgets/circular_percent.dart';
 
 class FitnessHomePage extends StatelessWidget {
   FitnessHomePage({super.key});
@@ -72,35 +72,7 @@ class FitnessHomePage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Padding(
-                                  padding: const EdgeInsets.only(top: 32),
-                                  child: CircularPercentIndicator(
-                                    radius: 80.0,
-                                    lineWidth: 13.0,
-                                    percent: fakeData
-                                        .goalReached(fakeData.goalCoefs),
-                                    center: Text(
-                                      "${(fakeData.goalReached(fakeData.goalCoefs) * 100).round()}%",
-                                      style: AppStyles.fonts.display,
-                                    ),
-                                    footer: Text(
-                                      "Objectiu mensual",
-                                      style: AppStyles.fonts.labelLarge,
-                                    ),
-                                    circularStrokeCap: CircularStrokeCap.round,
-                                    progressColor:
-                                        AppStyles.colors.chryslerBlue[500],
-                                  )),
-                              /*
-                              Text(
-                                "${(fakeData.goalReached(fakeData.goalCoefs) * 100).round()}%",
-                                style: AppStyles.fonts.headline,
-                              ),
-                              Text(
-                                "${(fakeData.goalReached(fakeData.heuristicCoefs(fakeData.goalCoefs)) * 100).round()}%",
-                                style: AppStyles.fonts.headline,
-                              )
-                              */
+                              CircularPercent(fakeData: fakeData),
                             ],
                           )
                         ],
@@ -115,4 +87,5 @@ class FitnessHomePage extends StatelessWidget {
       ),
     );
   }
+
 }

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_activitat_1_3/models/activities.dart';
 
 import 'units.dart';
