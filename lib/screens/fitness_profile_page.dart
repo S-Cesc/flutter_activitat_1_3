@@ -40,10 +40,13 @@ class _FitnessProfilePageState extends State<FitnessProfilePage> {
             const Center(
               child: Padding(
                 padding: EdgeInsets.all(16),
-                child: CircleAvatar(
-                  radius: 84,
-                  foregroundImage: NetworkImage(
-                      'https://randomuser.me/api/portraits/women/44.jpg'),
+                child: Hero(
+                  tag: 'https://randomuser.me/api/portraits/women/44.jpg',
+                  child: CircleAvatar(
+                    radius: 84,
+                    foregroundImage: NetworkImage(
+                        'https://randomuser.me/api/portraits/women/44.jpg'),
+                  ),
                 ),
               ),
             ),

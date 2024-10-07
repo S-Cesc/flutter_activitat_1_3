@@ -36,9 +36,12 @@ class FitnessHomePage extends StatelessWidget {
                 ),
               );
             },
-            child: const CircleAvatar(
-              foregroundImage: NetworkImage(
-                  'https://randomuser.me/api/portraits/women/44.jpg'),
+            child: const Hero(
+              tag: 'https://randomuser.me/api/portraits/women/44.jpg',
+              child: CircleAvatar(
+                foregroundImage: NetworkImage(
+                    'https://randomuser.me/api/portraits/women/44.jpg'),
+              ),
             ),
           )
         ],
