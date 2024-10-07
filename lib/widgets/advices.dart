@@ -25,13 +25,13 @@ class _AdvicesState extends State<Advices> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-            padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
-            child: Text(
-              fakeData.advices[_index],
-              style: AppStyles.fonts.body,
-              softWrap: true,
-            ),
+          padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+          child: Text(
+            fakeData.advices[_index],
+            style: AppStyles.fonts.body(),
+            softWrap: true,
           ),
+        ),
         Row(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,8 +41,8 @@ class _AdvicesState extends State<Advices> {
                 style: ButtonStyle(
                   foregroundColor: WidgetStatePropertyAll(
                       AppStyles.colors.chryslerBlue[400]),
-                  textStyle:
-                      WidgetStatePropertyAll(AppStyles.fonts.bodyUnderlined),
+                  textStyle: WidgetStatePropertyAll(AppStyles.fonts
+                      .body(decoration: TextDecoration.underline)),
                 ),
                 child: const Text("Més detalls"),
               ),
@@ -50,5 +50,4 @@ class _AdvicesState extends State<Advices> {
       ],
     );
   }
-
 }

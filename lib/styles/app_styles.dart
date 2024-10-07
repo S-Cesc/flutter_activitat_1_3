@@ -1,51 +1,82 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_activitat_1_3/extensions/date_day_name.dart';
+import 'package:intl/intl.dart';
 
 class AppStyles {
   static const _black = Colors.black45;
   static const _white = Colors.white;
-  static const fonts = (
+  static final fonts = (
     fontFamilyName: 'Montserrat',
-    display /*bigTitle*/ : TextStyle(
-      inherit: false,
-      fontSize: 40,
-      color: _black,
-    ),
-    headline /*middleTitle*/ : TextStyle(
-      inherit: false,
-      fontSize: 24,
-      fontWeight: FontWeight.bold,
-      color: _black,
-    ),
-    labelLarge /*distance*/ : TextStyle(
-      inherit: false,
-      fontSize: 24,
-      color: _black,
-    ),
-    labelSmall /*activityType*/ : TextStyle(
-      inherit: false,
-      fontSize: 18,
-      color: _black,
-    ),
-    labelSmallUndelined /*activityType*/ : TextStyle(
-      fontSize: 18,
-      decoration: TextDecoration.underline,
-    ),
-    body: TextStyle(
-      inherit: false,
-      fontSize: 14,
-      color: _black,
-    ),
-    bodyItalic: TextStyle(
-      inherit: false,
-      fontSize: 14,
-      color: _black,
-      fontStyle: FontStyle.italic,
-    ),
-    bodyUnderlined: TextStyle(
-      inherit: false,
-      fontSize: 14,
-      decoration: TextDecoration.underline,
-    ),
+    display /*bigTitle*/ : ({
+      Color color = _black,
+      FontStyle fontStyle = FontStyle.normal,
+      FontWeight fontWeight = FontWeight.normal,
+      TextDecoration decoration = TextDecoration.none,
+    }) =>
+        TextStyle(
+          inherit: false,
+          fontSize: 40,
+          fontStyle: fontStyle,
+          fontWeight: fontWeight,
+          decoration: decoration,
+          color: color,
+        ),
+    headline /*middleTitle*/ : ({
+      Color color = _black,
+      FontStyle fontStyle = FontStyle.normal,
+      FontWeight fontWeight = FontWeight.bold,
+      TextDecoration decoration = TextDecoration.none,
+    }) =>
+        TextStyle(
+          inherit: false,
+          fontSize: 24,
+          fontStyle: fontStyle,
+          fontWeight: fontWeight,
+          decoration: decoration,
+          color: color,
+        ),
+    labelLarge /*distance*/ : ({
+      Color color = _black,
+      FontStyle fontStyle = FontStyle.normal,
+      FontWeight fontWeight = FontWeight.normal,
+      TextDecoration decoration = TextDecoration.none,
+    }) =>
+        TextStyle(
+          inherit: false,
+          fontSize: 24,
+          fontStyle: fontStyle,
+          fontWeight: fontWeight,
+          decoration: decoration,
+          color: color,
+        ),
+    labelSmall /*activityType*/ : ({
+      Color color = _black,
+      FontStyle fontStyle = FontStyle.normal,
+      FontWeight fontWeight = FontWeight.normal,
+      TextDecoration decoration = TextDecoration.none,
+    }) =>
+        TextStyle(
+          inherit: false,
+          fontSize: 18,
+          fontStyle: fontStyle,
+          fontWeight: fontWeight,
+          decoration: decoration,
+          color: color,
+        ),
+    body: ({
+      Color color = _black,
+      FontStyle fontStyle = FontStyle.normal,
+      FontWeight fontWeight = FontWeight.normal,
+      TextDecoration decoration = TextDecoration.none,
+    }) =>
+        TextStyle(
+          inherit: false,
+          fontSize: 14,
+          fontStyle: fontStyle,
+          fontWeight: fontWeight,
+          decoration: decoration,
+          color: color,
+        ),
   );
   static const colors = (
     black: _black,
@@ -106,6 +137,16 @@ class AppStyles {
       900: Color(0xFFc8c4e0),
     }),
   );
+
+  static String formatDate(DateTime d, [bool includeTime = true]) {
+    final dayName = DateDayName.fromDate(d);
+    final formatTime = includeTime ? ", ${DateFormat('Hm').format(d)}" : null;
+    if (dayName.name == null) {
+      return "${DateFormat('yMMMd', 'ca_ES').format(d)}${formatTime ?? ''}";
+    } else {
+      return "${dayName.capitalizedName()!}${formatTime ?? ''}";
+    }
+  }
 
   // Invert color index for Brightness.dark mode
   // Caution: do not use when index is not invertible

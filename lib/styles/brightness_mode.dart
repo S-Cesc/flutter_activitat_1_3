@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/widgets.dart';
 
-// The extension allows to place information about Brighness in the context 
+// The extension allows to place information about Brighness in the context
 // Example of use in the build method:
 // @override
 // Widget build(BuildContext context) {
@@ -10,7 +10,6 @@ import 'package:flutter/widgets.dart';
 //       semanticsLabel: 'my logo');
 // }
 extension BrightnessMode on BuildContext {
-
   /// current brightness mode
   Brightness get brightness => MediaQuery.of(this).platformBrightness;
 
@@ -18,5 +17,4 @@ extension BrightnessMode on BuildContext {
   bool get isDarkMode {
     return brightness == Brightness.dark;
   }
-
 }

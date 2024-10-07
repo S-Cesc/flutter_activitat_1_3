@@ -36,14 +36,15 @@ enum DistanceUnit {
   }
 }
 
-// TODO missing fieds: abbrev, name, factor
 enum ShortDistanceUnit {
   // TODO switch factors (m -> 1000 => km = 1000m), and then valueToDistance
-  m(0.001),
-  yard(0.000568181818);
+  m("m", "metres", 0.001),
+  yard("yd", "yardes", 0.000568181818);
 
-  const ShortDistanceUnit(this.factor);
+  const ShortDistanceUnit(this.abbrev, this.name, this.factor);
 
+  final String abbrev;
+  final String name;
   // factor to equivalent DistanceUnit
   final double factor;
 

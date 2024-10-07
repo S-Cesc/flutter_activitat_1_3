@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_activitat_1_3/styles/app_styles.dart';
+import '../styles/app_styles.dart';
 import '../models/fitness_data.dart';
 import '../models/activities.dart';
 import 'cercled_icon.dart';
 
 class ActivityCard extends StatelessWidget {
-  final formater = NumberFormat("#0.000"); 
+  final formater = NumberFormat("#0.000");
   final Profile profile;
   final MapEntry<DateTime, Datum> data;
 
@@ -25,15 +25,15 @@ class ActivityCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CercledIcon.cercledIcon(activityIcon(data.value.activity),
-                                    externalColor: AppStyles.colors.chryslerBlue[700]!,
-                                    iconColor: AppStyles.colors.chryslerBlue[700]!),
+                externalColor: AppStyles.colors.chryslerBlue[700]!,
+                iconColor: AppStyles.colors.chryslerBlue[700]!),
             Column(
               children: [
                 Text(data.value.activity.toString(),
-                    style: AppStyles.fonts.labelLarge),
+                    style: AppStyles.fonts.labelLarge()),
                 Text(
-                  formatDate(data.key),
-                  style: AppStyles.fonts.bodyItalic,
+                  AppStyles.formatDate(data.key),
+                  style: AppStyles.fonts.body(fontStyle: FontStyle.italic),
                 ),
               ],
             ),
@@ -43,7 +43,7 @@ class ActivityCard extends StatelessWidget {
                 data.value.distance == null
                     ? ""
                     : "${formater.format(data.value.distance)} ${profile.distanceUnit.abbrev}",
-                style: AppStyles.fonts.headline,
+                style: AppStyles.fonts.headline(),
                 textAlign: TextAlign.end,
               ),
             ),
@@ -64,21 +64,5 @@ class ActivityCard extends StatelessWidget {
       Activities.strengthTraining => Icons.fitness_center,
       Activities.walkRun => Icons.directions_walk,
     };
-  }
-
-  String formatDate(DateTime d) {
-    final formatTime = DateFormat('Hm').format(d);
-    final now = DateTime.now();
-    final today = DateTime(now.year, now.month, now.day);
-    if (d.isBefore(today)) {
-      final dayBefore = today.add(const Duration(days: -1));
-      if (d.isBefore(dayBefore)) {
-        return "${DateFormat('yMMMd', 'ca_ES').format(d)}, $formatTime";
-      } else {
-        return "Ahir, $formatTime";
-      }
-    } else {
-      return "Avui,  $formatTime";
-    }
   }
 }

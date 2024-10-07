@@ -3,6 +3,7 @@ import 'package:flutter_activitat_1_3/models/activities.dart';
 import 'units.dart';
 
 class FitnessData {
+  static const appTitle = 'Fitness Time';
   Profile profile;
   Map<DateTime, Datum> data;
 
@@ -18,9 +19,9 @@ class FitnessData {
     );
   }
 
-  /// Sum total grouped by activities
-  Map<Activities, (double?, Duration)> get totals {
-    Map<Activities, (double?, Duration)> result = {};
+  /// Sum total distance-duration-count grouped by activities
+  Map<Activities, (double?, Duration, int)> get totals {
+    Map<Activities, (double?, Duration, int)> result = {};
     for (MapEntry<DateTime, Datum> d in data.entries) {
       result.update(
           d.value.activity,
@@ -28,9 +29,10 @@ class FitnessData {
                 d.value.distance == null
                     ? x.$1
                     : (x.$1 ?? 0) + d.value.distance!,
-                x.$2 + d.value.time
+                x.$2 + d.value.time,
+                x.$3+1
               ),
-          ifAbsent: () => (d.value.distance, d.value.time));
+          ifAbsent: () => (d.value.distance, d.value.time, 1));
     }
     return result;
   }
@@ -137,12 +139,6 @@ class FitnessData {
     return result;
   }
 
-  /* TODO total getters
-  totalTime
-  totalDistance
-  totalActivities
-  dayCount
-  */
 }
 
 class Profile {

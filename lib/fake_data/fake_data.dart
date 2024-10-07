@@ -39,30 +39,30 @@ class FakeProfile {
   );
   static var data = <DateTime, Datum>{
     DateTime.parse("20240927T20:04:21"): Datum(
-        time: ext.DurationExtensions.parseDurationISOString("PT1H25M").duration,
+        time: ext.DurationExtensions.parseDurationISOString("PT1H55M").duration,
         activity: Activities.activeRest),
     DateTime.parse("20240928T08:24:14"): Datum(
-        time: ext.DurationExtensions.parseDurationISOString("PT1H25M").duration,
+        time: ext.DurationExtensions.parseDurationISOString("PT3H25M").duration,
         distance: 12.350,
         activity: Activities.hiking),
     DateTime.parse("20240929T09:32:14"): Datum(
-        time: ext.DurationExtensions.parseDurationISOString("PT1H25M").duration,
+        time: ext.DurationExtensions.parseDurationISOString("PT3H45M").duration,
         distance: 14.727,
         activity: Activities.hiking),
     DateTime.parse("20240930T20:16:12"): Datum(
-        time: ext.DurationExtensions.parseDurationISOString("PT1H25M").duration,
+        time: ext.DurationExtensions.parseDurationISOString("PT21M").duration,
         distance: 2.450,
         activity: Activities.walkRun),
     DateTime.parse("20241001T20:24:57"): Datum(
-        time: ext.DurationExtensions.parseDurationISOString("PT1H25M").duration,
+        time: ext.DurationExtensions.parseDurationISOString("P15M").duration,
         distance: 1.420,
         activity: Activities.running),
     DateTime.parse("20241002T20:32:07"): Datum(
-        time: ext.DurationExtensions.parseDurationISOString("PT2H45M").duration,
+        time: ext.DurationExtensions.parseDurationISOString("PT29M").duration,
         distance: 3.252,
         activity: Activities.running),
     DateTime.parse("20241003T20:57:32"): Datum(
-        time: ext.DurationExtensions.parseDurationISOString("PT1H25M").duration,
+        time: ext.DurationExtensions.parseDurationISOString("PT32M").duration,
         distance: 4.412,
         activity: Activities.running),
     DateTime.parse("20241004T17:38:12"): Datum(
@@ -73,17 +73,16 @@ class FakeProfile {
         distance: 1.350,
         activity: Activities.swimming),
     DateTime.parse("20241004T19:57:14"): Datum(
-        time: ext.DurationExtensions.parseDurationISOString("PT1H25M").duration,
+        time: ext.DurationExtensions.parseDurationISOString("PT18M").duration,
         distance: 2.635,
         activity: Activities.walkRun),
     DateTime.parse("20241005T09:24:22"): Datum(
-        time: ext.DurationExtensions.parseDurationISOString("PT1H25M").duration,
+        time: ext.DurationExtensions.parseDurationISOString("PT5H25M").duration,
         distance: 24.059,
         activity: Activities.hiking),
     DateTime.parse("20241006T08:14:24"): Datum(
-        time: ext.DurationExtensions.parseDurationISOString("PT1H25M").duration,
+        time: ext.DurationExtensions.parseDurationISOString("PT1H07M").duration,
         distance: 6.523,
         activity: Activities.hiking),
   };
-
 }

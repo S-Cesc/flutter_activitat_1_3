@@ -48,11 +48,11 @@ class _CircularPercentState extends State<CircularPercent> {
             percent: _coefValue,
             center: Text(
               "${(_coefValue * 100).round()}%",
-              style: AppStyles.fonts.display,
+              style: AppStyles.fonts.display(),
             ),
             footer: Text(
               "Objectiu mensual",
-              style: AppStyles.fonts.labelLarge,
+              style: AppStyles.fonts.labelLarge(),
             ),
             circularStrokeCap: CircularStrokeCap.round,
             progressColor: progressColor,
